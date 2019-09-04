@@ -28,6 +28,7 @@ public class TransactionListenerLocal implements TransactionListener {
         //模拟数据库保存(成功/失败)
         boolean result=Math.abs(Objects.hash(orderId))%2==0;
         results.put(orderId,result); //
+        System.out.println("map："+results);
         return result?LocalTransactionState.COMMIT_MESSAGE:LocalTransactionState.UNKNOW;
     }
     //提供给事务执行状态检查的回调方法，给broker用的(异步回调）

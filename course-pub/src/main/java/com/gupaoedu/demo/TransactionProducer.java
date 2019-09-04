@@ -33,7 +33,7 @@ public class TransactionProducer {
             String body="{'operation':'doOrder','orderId':'"+orderId+"'}";
             Message message=new Message("order_tx_topic",
                     "TagA",orderId,body.getBytes(RemotingHelper.DEFAULT_CHARSET));
-            transactionMQProducer.sendMessageInTransaction(message,orderId+"&"+i);
+            transactionMQProducer.sendMessageInTransaction(message,orderId);
             Thread.sleep(1000);
         }
 
