@@ -36,6 +36,7 @@ public class TransactionListenerLocal implements TransactionListener {
     @Override
     public LocalTransactionState checkLocalTransaction(MessageExt messageExt) {
         String orderId=messageExt.getKeys();
+
         System.out.println("执行事务回调检查： orderId:"+orderId);
         boolean rs=results.get(orderId);
         System.out.println("数据的处理结果："+rs); //只有成功/失败
