@@ -25,7 +25,7 @@ public class TransactionConsumer {
     public static void main(String[] args) throws MQClientException {
         DefaultMQPushConsumer defaultMQPushConsumer=
                 new DefaultMQPushConsumer("tx_consumer");
-        defaultMQPushConsumer.setNamesrvAddr("192.168.13.102:9876");
+        defaultMQPushConsumer.setNamesrvAddr("127.0.0.1:9876");
         defaultMQPushConsumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         //subExpression 可以支持sql的表达式. or  and  a=? ,,,
         defaultMQPushConsumer.subscribe("order_tx_topic","*");

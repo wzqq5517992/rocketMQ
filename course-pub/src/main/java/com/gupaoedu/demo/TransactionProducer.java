@@ -21,7 +21,7 @@ public class TransactionProducer {
     public static void main(String[] args) throws MQClientException, UnsupportedEncodingException, InterruptedException {
         TransactionMQProducer transactionMQProducer=new
                 TransactionMQProducer("tx_producer");
-        transactionMQProducer.setNamesrvAddr("192.168.13.102:9876");
+        transactionMQProducer.setNamesrvAddr("127.0.0.1:9876");
         ExecutorService executorService= Executors.newFixedThreadPool(10);
         transactionMQProducer.setExecutorService(executorService);
         transactionMQProducer.setTransactionListener(new TransactionListenerLocal()); //本地事务的监听
